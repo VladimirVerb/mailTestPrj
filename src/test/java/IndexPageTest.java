@@ -46,7 +46,7 @@ public class IndexPageTest {
  
     @Test
     public void SendMail() throws Exception {
-        ip.login("verbv", "Vmpr82Nght");
+        ip.login("tmp", "tmp1");
         ip.createMail("vladimir_verb@yahoo.com", "Test", "Some data");
         //assertEquals(15, calculator.getSum(7,8));
     }
