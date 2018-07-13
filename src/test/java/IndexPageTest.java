@@ -1,12 +1,13 @@
 
+import com.test.mail.Data;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import com.test.mail.DriverConfig;
 import com.test.mail.IndexPage;
+import com.test.mail.User;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +22,7 @@ import com.test.mail.IndexPage;
 public class IndexPageTest {
     private IndexPage ip;
     private DriverConfig dc;
+    private Data data;
     
     @BeforeClass
     public static void beforeClass() {
@@ -34,7 +36,8 @@ public class IndexPageTest {
  
     @Before
     public void initTest() {
-        dc = new DriverConfig();
+        data = new Data();
+        dc = new DriverConfig(data.GetHUB());
         ip = new IndexPage(dc.getDriver(),dc.getLog());
     }
  
@@ -46,9 +49,7 @@ public class IndexPageTest {
  
     @Test
     public void SendMail() throws Exception {
-        ip.login("tmp", "tmp1");
-        ip.createMail("vladimir_verb@yahoo.com", "Test", "Some data");
-        //assertEquals(15, calculator.getSum(7,8));
+        ip.login(data.InitUser()).createMail("vladimir_verb@yahoo.com", "Test", "Some data");
     }
  
 }
