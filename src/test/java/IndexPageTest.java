@@ -49,7 +49,7 @@ public class IndexPageTest {
  
     @Test
     public void SendMail() throws Exception {
-        ip.login(data.InitUser()).createMail("vladimir_verb@yahoo.com", "Test", "Some data");
+        ip.login(data.InitUser()).createMail("vladimir_verb@yahoo.com", "TestVV", "Some dataVV");
     }
  
 }
